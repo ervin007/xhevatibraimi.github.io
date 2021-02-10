@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>VAKSAJN</title>
+  <link rel="icon" type="image/png" href="favicon.svg" />
+  <style>
+    body {
+      background-color: black;
+    }
+
+    img {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    video {
+      width: 100%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <img src="play.png" />
+  <video loop hidden>
+    <source src="vaksajn.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    var play = document.getElementsByTagName('img')[0];
+    play.addEventListener("click", function (e) {
+      e.target.parentNode.removeChild(e.target);
+      var video = document.getElementsByTagName('video')[0];
+      video.style.display = "block";
+      video.play();
+    });
+  </script>
+</body>
+
+</html>
